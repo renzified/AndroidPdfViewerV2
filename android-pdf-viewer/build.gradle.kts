@@ -48,7 +48,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.androidx.annotation)
-    implementation("com.github.basurahan:PdfiumAndroid:2.0.4")
+    implementation("com.github.renzified:PdfiumAndroid:2.0.4")
 }
 
 publishing {
@@ -56,7 +56,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.barteksc.pdfviewer"
             artifactId = "pdf-viewer"
-            version = "2.0.4"
+            version = "2.0.5"
 
             afterEvaluate {
                 from(components["release"])
