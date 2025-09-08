@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.github.barteksc.pdfviewer"
-    compileSdk = 36
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 26
@@ -56,7 +56,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.barteksc.pdfviewer"
             artifactId = "pdf-viewer"
-            version = "2.0.5"
+            version = "2.0.6"
 
             afterEvaluate {
                 from(components["release"])
