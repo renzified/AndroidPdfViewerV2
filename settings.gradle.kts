@@ -1,5 +1,3 @@
-import org.gradle.kotlin.dsl.flatDir
-
 pluginManagement {
     repositories {
         google {
@@ -11,9 +9,6 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
-        flatDir {
-            dirs("libs")
-        }
     }
 }
 dependencyResolutionManagement {
@@ -21,9 +16,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        flatDir {
-            dirs("libs")
-        }
+        maven { url = uri("https://jitpack.io") }
     }
 }
 

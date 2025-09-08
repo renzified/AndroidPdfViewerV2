@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    id("maven-publish")
 }
 
 android {
@@ -30,6 +31,12 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 
 dependencies {
@@ -41,5 +48,19 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.androidx.annotation)
-    implementation(mapOf("name" to "PdfiumAndroid-2.0.0-release", "ext" to "aar"))
+    implementation("com.github.basurahan:PdfiumAndroid:2.0.4")
+}
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.github.barteksc.pdfviewer"
+            artifactId = "pdf-viewer"
+            version = "2.0.4"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
 }
