@@ -1,6 +1,10 @@
 # Android PdfViewer V2
 This is a updated version of the [original](https://github.com/barteksc/AndroidPdfViewerV2) from [barteksc](https://github.com/barteksc)
 
+## Whats new ?
+
+Support for [16kb page size](https://developer.android.com/guide/practices/page-sizes#:~:text=Historically%2C%20Android%20has%20only%20supported,KB%20(16%20KB%20devices))
+
 ## Installation
 
 The library is hosted in jitpack.io so make sure to add the jitpack repository in your project repository list
