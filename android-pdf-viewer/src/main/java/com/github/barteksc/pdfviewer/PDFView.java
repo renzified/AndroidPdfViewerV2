@@ -1557,7 +1557,6 @@ public class PDFView extends RelativeLayout {
         }
 
         public void load() {
-            PDFView.this.recycle();
             PDFView.this.setOnDrawListener(onDrawListener);
             PDFView.this.setOnDrawAllListener(onDrawAllListener);
             PDFView.this.setOnPageChangeListener(onPageChangeListener);
@@ -1579,6 +1578,7 @@ public class PDFView extends RelativeLayout {
             PDFView.this.post(new Runnable() {
                 @Override
                 public void run() {
+                    PDFView.this.recycle();
                     if (pageNumbers != null) {
                         PDFView.this.load(documentSource, password, onLoadCompleteListener, onErrorListener, pageNumbers);
                     } else {

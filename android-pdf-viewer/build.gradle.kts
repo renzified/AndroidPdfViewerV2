@@ -56,7 +56,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.barteksc.pdfviewer"
             artifactId = "pdf-viewer"
-            version = "2.0.6"
+            version = "2.0.7"
 
             afterEvaluate {
                 from(components["release"])
